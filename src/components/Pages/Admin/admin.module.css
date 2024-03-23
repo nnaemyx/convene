@@ -1,0 +1,77 @@
+.adminContainer{
+    background: #d7cdcd;
+    height: calc(100vh - 1rem);
+    overflow: hidden;   
+}
+.adminForm{
+    padding: 0.9rem 1.9rem;
+    border-radius: 0.5rem;
+    max-width: 37.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    background: #ffffff;
+    border-radius: 0.5rem;  
+}
+.adminTitle{
+    width: 100%; 
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.625rem 0.935rem;
+}
+
+.adminContainer h1{
+    margin-top: 2rem;
+    text-align: center;
+}
+.tags{
+    display: flex;
+    justify-content: space-around;
+}
+.tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tag label{
+    font-size: 1.3rem;
+    margin-left: 0.8rem;
+}
+.adminForm input,
+.adminForm textarea{
+    border: 1px solid #332c1d;
+}
+.buttons{
+    margin-top: 2rem;
+    text-align: end;
+    
+}
+.btn1, .btn2{
+    background: #808080;
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    outline: none;
+    font-size: 1.1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    cursor: pointer
+}
+.btn1:hover,
+.btn2:hover{
+    opacity: 0.8;
+}
+.btn1{
+    margin-right:1.5rem;
+}
+@media (max-width:768px){
+.adminForm{
+    top:60%
+}
+}

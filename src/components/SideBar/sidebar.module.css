@@ -1,0 +1,44 @@
+.sidebar{
+    position: fixed;
+    top: 50%;
+    left:0;
+    transform: translateY(-50%);
+    background: #d7cdcd;
+    padding: 0.7rem;
+    /* border-radius: 5px; */
+}
+.sidebar p{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.sidebar img{
+    display: block;
+    height: 60vh;
+    width: 100%;
+    object-fit: cover;
+}
+.animatedSidebar{
+    text-transform: uppercase;
+    background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 50% auto;
+    color: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 1.5rem;
+}
+@keyframes textclip {
+    to {
+        background-position: 50% center;
+      }
+}
