@@ -3,12 +3,15 @@ import Button from "../../Button";
 import background from "./background.jpg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios"; 
 
 const SignUp = () => {
   const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,10 +26,10 @@ const SignUp = () => {
           password,
         }
       );
-
+        navigate("/")
       // Handle successful signup
       console.log("User signed up successfully:", response);
-      // You can navigate to another page or show a success message to the user
+      
     } catch (error) {
       // Handle signup error
       console.error("Error signing up user:", error.response);
