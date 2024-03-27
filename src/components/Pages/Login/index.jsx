@@ -30,6 +30,9 @@ const Login = () => {
         const data = await response.json();
         throw new Error(data.error);
       }
+
+      const userData = await response.json();
+      localStorage.setItem("userData", JSON.stringify(userData));
       navigate("/home")
       // Login successful, navigate to dashboard or perform other actions
       console.log("Login successful");
