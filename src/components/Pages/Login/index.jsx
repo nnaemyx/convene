@@ -13,7 +13,7 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+  
     try {
       const response = await fetch(
         "https://tracking-convene.onrender.com/api/v1/users/login",
@@ -25,22 +25,28 @@ const Login = () => {
           body: JSON.stringify({ email, password }),
         }
       );
-
+  
       if (!response.ok) {
         const data = await response.json();
         throw new Error(data.error);
       }
-
+  
       const userData = await response.json();
       localStorage.setItem("userData", JSON.stringify(userData));
-      navigate("/home")
+  
+      if (userData.isAdmin) {
+        navigate("/admin");
+      } else {
+        navigate("/home");
+      }
+  
       // Login successful, navigate to dashboard or perform other actions
       console.log("Login successful");
     } catch (error) {
       setError(error.message);
     }
   };
-
+  
   return (
     <div className={styles.loginContainer}>
       <div className={styles.loginForm}>
